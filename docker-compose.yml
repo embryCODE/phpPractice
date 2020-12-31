@@ -1,0 +1,20 @@
+version: '2'
+services:
+  db:
+    image: mysql:5.7
+    environment:
+      MYSQL_ROOT_PASSWORD: pass
+      MYSQL_DATABASE: php-practice
+      MYSQL_USER: user
+      MYSQL_PASSWORD: pass
+    ports:
+      - "3306:3306"
+
+  webserver:
+    image: phpstorm/php-71-apache-xdebug-26
+    ports:
+      - "80:80"
+    volumes:
+      - ./:/var/www/html
+    environment:
+      XDEBUG_CONFIG: remote_host=host.docker.internal
