@@ -203,7 +203,6 @@ QUERY;
 
     /**
      * @param array $ingredientToAdd
-     * @return int|string
      * @throws PDOException
      */
     public function editIngredient(array $ingredientToAdd)
