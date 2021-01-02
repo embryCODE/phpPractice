@@ -9,6 +9,7 @@ services:
       MYSQL_PASSWORD: pass
     ports:
       - "3306:3306"
+    restart: always
 
   webserver:
     image: phpstorm/php-71-apache-xdebug-26
@@ -18,3 +19,4 @@ services:
       - ./:/var/www/html
     environment:
       XDEBUG_CONFIG: remote_host=host.docker.internal
+    restart: always
