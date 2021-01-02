@@ -9,12 +9,11 @@ include('html/topHTML.php');
 $db = new db();
 $allRecipes = $db->getAllRecipes();
 
-
 foreach ($allRecipes as $recipe) {
     $ingredients = $db->getIngredientsByRecipeId($recipe['id'])
 
     ?>
-    <div>
+    <div class="recipe-card">
         <h2><?php echo ucfirst($recipe['name']) ?></h2>
         <h3>Ingredients</h3>
         <ul>
@@ -25,6 +24,8 @@ foreach ($allRecipes as $recipe) {
 
         <h3>Instructions</h3>
         <p><?php echo $recipe['instructions'] ?></p>
+
+        <a href="/add-edit-recipe.php?recipe-id=<?php echo $recipe['id'] ?>">Edit</a> | <a href="/delete-recipe.php?recipe-id=<?php echo $recipe['id'] ?>">Delete</a>
     </div>
 <?php } ?>
 
