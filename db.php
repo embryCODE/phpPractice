@@ -4,7 +4,14 @@ class db
 {
     protected $connectionDetails;
 
-    public function __construct($dbhost = 'db', $dbuser = 'user', $dbpass = 'pass', $dbname = 'php-practice', $charset = 'utf8')
+    public function __construct(
+        // I know this is not secure but this is just for learning purposes
+        $dbhost = 'db',
+        $dbuser = 'user',
+        $dbpass = 'pass',
+        $dbname = 'php-practice',
+        $charset = 'utf8'
+    )
     {
         $this->connectionDetails = [
             'dbhost' => $dbhost,
