@@ -247,6 +247,8 @@ QUERY;
 
     private function createArrayFromResult($result): array
     {
+        if (!$result) return [];
+
         return $result->fetch_all(MYSQLI_ASSOC);
     }
 
